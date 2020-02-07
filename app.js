@@ -107,4 +107,23 @@ const randChoice = arr => {
   
 const people = [];
   
-  
+for (let i=0; i<20; i++) {
+    const gender = randChoice(genders);
+
+    let firstName;
+    if(gender === 'M') {
+        firstName = randChoice(maleNames);
+    } else {
+      firstName = randChoice(femaleNames);
+    }
+    
+    const age = randomAge(18,78);
+    console.log(age);
+
+    function randomAge(min, max) { // min and max age 
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+
+    const randomPerson = { gender, firstName, lastName, age };
+    people.push(randomPerson);
+}
