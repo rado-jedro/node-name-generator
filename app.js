@@ -101,3 +101,10 @@ const lastNames = [
 ];
 console.log('lastNames:', lastNames); 
 
+const randChoice = arr => {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+  
+const people = [];
+  
+  
