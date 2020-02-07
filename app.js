@@ -116,7 +116,8 @@ for (let i=0; i<20; i++) {
     } else {
       firstName = randChoice(femaleNames);
     }
-    
+    const lastName = randChoice(lastNames);
+        
     const age = randomAge(18,78);
     console.log(age);
 
@@ -127,3 +128,10 @@ for (let i=0; i<20; i++) {
     const randomPerson = { gender, firstName, lastName, age };
     people.push(randomPerson);
 }
+
+const jsonString = JSON.stringify(people);
+
+fs.writeFile('people.json', jsonString, err => {
+  if (err) throw err;
+  console.log('The file has been saved!');
+});
